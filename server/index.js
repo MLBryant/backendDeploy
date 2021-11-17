@@ -11,12 +11,6 @@ app.use(express.json()); // When we want to be able to accept JSON.
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/index.html'))
 })
-app.get('/', (req, res) => {  
-  res.sendFile(path.join(__dirname, '../client/main.js'))
-})
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../styles.css'))
-})
 
 let quotes = [{'id': 1,'quote':'We shine bright so that others may shine brighter.'}, {'id': 2,'quote':'Success is not final, failure is not fatal: it is the courage to continue that counts.'}, {'id': 3,'quote':'Life is like riding a bicycle. To keep your balance, you must keep moving.'}]
 quoteId = 4
