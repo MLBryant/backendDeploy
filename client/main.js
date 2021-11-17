@@ -7,13 +7,14 @@ const editQuoteForm = document.querySelector('#quoteEditForm')
 const deleteQuote = document.querySelector('#quoteDelete')
 const deleteQuoteForm = document.querySelector('#quoteDeleteForm')
 const quoteList = document.querySelector('#quoteSection')
+const port = process.env.PORT || 4000
 
 const inputQuote = event => {
     event.preventDefault()
     let newQuote = {
         quote: addQuote.value
     }
-    axios.post("http://localhost:4000/api/quote/", newQuote)
+    axios.post(`${port}/api/quote/`, newQuote)
     .then(res => {
         console.log(res.data);
         getQuotes()
@@ -28,7 +29,7 @@ const changeQuote = event => {
             id: +editQuote.value,
             quote: editedQuote.value
         }
-        axios.put(`http://localhost:4000/api/quote/${newQuote.id}`, newQuote)
+        axios.put(`${port}/api/quote/${newQuote.id}`, newQuote)
         .then(res => {
             console.log(res.data);
             getQuotes()
@@ -43,7 +44,7 @@ const removeQuote = event => {
     event.preventDefault()
     if (+deleteQuote.value > 0) {
         let id = +deleteQuote.value
-        axios.delete(`http://localhost:4000/api/quote/${id}`)
+        axios.delete(`${port}/api/quote/${id}`)
         .then(res => {
             console.log(res.data);
             getQuotes()
@@ -54,7 +55,7 @@ const removeQuote = event => {
 }
 const getQuotes = () => {
     
-    axios.get('http://localhost:4000/api/quote')
+    axios.get(`${port}/api/quote`)
     .then(res => {
         for (x = 0; x < quoteDropdown.length; x++) {
             quoteDropdown[x].innerHTML = ''
