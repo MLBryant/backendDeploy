@@ -7,9 +7,17 @@ const app = express();
 app.use(cors());
 
 app.use(express.json()); // When we want to be able to accept JSON.
+app.use('/css', express.static(path.join(__dirname, 'client/style.css')))
+app.use('/js', express.static(path.join(__dirname, 'client/main.js')))
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/index.html'))
+})
+app.get('/css', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/styles.css'))
+})
+app.get('/js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/main.js'))
 })
 
 let quotes = [{'id': 1,'quote':'We shine bright so that others may shine brighter.'}, {'id': 2,'quote':'Success is not final, failure is not fatal: it is the courage to continue that counts.'}, {'id': 3,'quote':'Life is like riding a bicycle. To keep your balance, you must keep moving.'}]
