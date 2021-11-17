@@ -9,15 +9,15 @@ const deleteQuoteForm = document.querySelector('#quoteDeleteForm')
 const quoteList = document.querySelector('#quoteSection')
 
 document.getElementById("fortuneButton").onclick = function () {
-    axios.get("http://localhost:4000/api/fortune/")
+    axios.get("/api/fortune/")
         .then(function (response) {
           const data = response.data;
           alert(data);
         });
   };
-  
+
   document.getElementById("complimentButton").onclick = function () {
-    axios.get("http://localhost:4000/api/compliment/")
+    axios.get("/api/compliment/")
         .then(function (response) {
           const data = response.data;
           alert(data);
