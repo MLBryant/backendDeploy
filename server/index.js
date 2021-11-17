@@ -10,7 +10,11 @@ app.use(express.json()); // When we want to be able to accept JSON.
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/index.html'))
+})
+app.get('/', (req, res) => {  
   res.sendFile(path.join(__dirname, '../client/main.js'))
+})
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../styles.css'))
 })
 
