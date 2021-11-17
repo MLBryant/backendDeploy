@@ -7,7 +7,7 @@ const editQuoteForm = document.querySelector('#quoteEditForm')
 const deleteQuote = document.querySelector('#quoteDelete')
 const deleteQuoteForm = document.querySelector('#quoteDeleteForm')
 const quoteList = document.querySelector('#quoteSection')
- 
+
 const inputQuote = event => {
     event.preventDefault()
     let newQuote = {
