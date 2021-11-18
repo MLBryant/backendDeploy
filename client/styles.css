@@ -55,6 +55,7 @@ section {
 }
 
 #quoteSection {
+    text-align: center;
     font-size: 24px;
     color: rgb(0, 0, 0);
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #18fff3, 0 0 30px #18fff3, 0 0 40px #18fff3, 0 0 55px #18fff3, 0 0 75px #18fff3;
